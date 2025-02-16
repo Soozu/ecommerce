@@ -1,0 +1,134 @@
+/* Subscription List Styles */
+.subscription-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--admin-bg);
+    border-radius: 8px;
+}
+
+.filter-group, .search-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.search-group {
+    flex: 1;
+}
+
+.search-group input {
+    max-width: 300px;
+}
+
+/* Status Indicators */
+.subscription-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.status-success {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.status-danger {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* Modal Styles */
+.subscription-details {
+    display: grid;
+    gap: 1rem;
+}
+
+.detail-group {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.detail-label {
+    font-weight: 500;
+    color: var(--admin-text-light);
+}
+
+.detail-value {
+    color: var(--admin-text);
+}
+
+/* Timeline */
+.subscription-timeline {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: var(--admin-bg);
+    border-radius: 8px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-left: 2px solid var(--admin-border);
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--admin-primary);
+}
+
+.timeline-date {
+    font-size: 0.875rem;
+    color: var(--admin-text-light);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .subscription-filters {
+        flex-direction: column;
+    }
+
+    .filter-group, .search-group {
+        width: 100%;
+    }
+
+    .search-group input {
+        max-width: none;
+    }
+
+    .detail-group {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+
+    .admin-table th:nth-child(4),
+    .admin-table td:nth-child(4),
+    .admin-table th:nth-child(5),
+    .admin-table td:nth-child(5) {
+        display: none;
+    }
+}
+
+/* Additional Utility Classes */
+.text-success { color: var(--admin-success); }
+.text-danger { color: var(--admin-danger); }
+.text-warning { color: var(--admin-warning); }
+
+.bg-success-light { background-color: rgba(22, 101, 52, 0.1); }
+.bg-danger-light { background-color: rgba(153, 27, 27, 0.1); }
+.bg-warning-light { background-color: rgba(146, 64, 14, 0.1); } 

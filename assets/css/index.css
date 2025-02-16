@@ -1,0 +1,485 @@
+/* Global Styles */
+:root {
+    --primary-color: #63FFFB;
+    --secondary-color: #9C47FF;
+    --dark-bg: #0D1117;
+    --card-bg: rgba(30, 35, 45, 0.9);
+    --text-color: #ffffff;
+}
+
+body {
+    background: var(--dark-bg);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(99, 255, 251, 0.1);
+    padding: 1rem 0;
+    position: relative;
+    z-index: 1100;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.dropdown-menu {
+    background: rgba(13, 17, 23, 0.95);
+    border: 1px solid rgba(99, 255, 251, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+.dropdown-item {
+    color: rgba(255, 255, 255, 0.8) !important;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background: rgba(99, 255, 251, 0.1);
+    color: var(--primary-color) !important;
+    transform: translateX(5px);
+}
+
+.dropdown-divider {
+    border-color: rgba(99, 255, 251, 0.1);
+    margin: 0.5rem 0;
+}
+
+/* Badge in dropdown */
+.dropdown-item .badge {
+    background: rgba(99, 255, 251, 0.2);
+    color: var(--primary-color);
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover .badge {
+    background: var(--primary-color);
+    color: #0D1117;
+}
+
+/* Icons in dropdown */
+.dropdown-item i {
+    width: 20px;
+    text-align: center;
+    color: rgba(99, 255, 251, 0.6);
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover i {
+    color: var(--primary-color);
+}
+
+/* Welcome Message */
+.welcome-message {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 100%;
+}
+
+.welcome-message .alert {
+    background: rgba(48, 209, 88, 0.1);
+    border: 1px solid rgba(48, 209, 88, 0.2);
+    color: #fff;
+    backdrop-filter: blur(10px);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, rgba(13, 17, 23, 0.9), rgba(30, 35, 45, 0.9)),
+                url('../images/hero-bg.jpg') center/cover;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(99, 255, 251, 0.1),
+        rgba(156, 71, 255, 0.1));
+    animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { transform: translateX(-50%); }
+    50% { transform: translateX(50%); }
+    100% { transform: translateX(-50%); }
+}
+
+.hero-section h1 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.hero-section .lead {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* Product Section */
+.products-section {
+    padding: 80px 0;
+    background: var(--dark-bg);
+    position: relative;
+}
+
+.products-section h2 {
+    color: var(--text-color);
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+.products-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 3px;
+}
+
+.product-card {
+    background: rgba(13, 17, 23, 0.95);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(99, 255, 251, 0.1);
+    position: relative;
+    height: 100%;
+    backdrop-filter: blur(10px);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(99, 255, 251, 0.1);
+}
+
+.product-icon {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, 
+        rgba(99, 255, 251, 0.05),
+        rgba(156, 71, 255, 0.05)
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+.product-icon::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(99, 255, 251, 0.1),
+        transparent
+    );
+    animation: shine 3s infinite;
+}
+
+.product-icon i {
+    font-size: 4rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(99, 255, 251, 0.3));
+    transition: all 0.3s ease;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.product-card:hover .product-icon i {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(99, 255, 251, 0.5));
+}
+
+.product-badge, .payment-badge {
+    position: absolute;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+}
+
+.product-badge {
+    top: 15px;
+    right: 15px;
+}
+
+.payment-badge {
+    top: 15px;
+    left: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--primary-color);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-details {
+    padding: 20px;
+    background: rgba(13, 17, 23, 0.95);
+}
+
+.product-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.product-details p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Footer */
+.footer {
+    background: rgba(13, 17, 23, 0.95);
+    padding: 60px 0 20px;
+    border-top: 1px solid rgba(99, 255, 251, 0.1);
+}
+
+.footer h5 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--primary-color);
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: rgba(99, 255, 251, 0.1);
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+    color: var(--dark-bg);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 255, 251, 0.3);
+}
+
+.btn-outline-light {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-color);
+}
+
+/* Empty Products State */
+.empty-products {
+    padding: 50px 0;
+}
+
+.empty-products i {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.empty-products h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.empty-products p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 80px 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .product-card {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+    
+    .btn-lg {
+        padding: 8px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* Add this to your existing CSS */
+.product-icon {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, rgba(99, 255, 251, 0.1), rgba(156, 71, 255, 0.1));
+    font-size: 4rem;
+    color: var(--primary-color);
+}
+
+.product-icon i {
+    filter: drop-shadow(0 0 10px rgba(99, 255, 251, 0.3));
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .product-icon i {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(99, 255, 251, 0.5));
+}
+
+/* Add payment method badge */
+.payment-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--primary-color);
+    backdrop-filter: blur(5px);
+} 

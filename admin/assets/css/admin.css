@@ -1,0 +1,191 @@
+/* Admin Theme Variables */
+:root {
+    --admin-primary: #2563eb;
+    --admin-secondary: #4f46e5;
+    --admin-success: #059669;
+    --admin-danger: #dc2626;
+    --admin-warning: #d97706;
+    --admin-info: #0891b2;
+    --admin-bg: #1e293b;
+    --admin-sidebar: #0f172a;
+    --admin-card: #293548;
+    --admin-text: #e2e8f0;
+    --admin-text-light: #94a3b8;
+    --admin-border: #334155;
+}
+
+/* Add this for consistent dark theme */
+body.admin-theme {
+    background: var(--admin-bg);
+    color: var(--admin-text);
+    min-height: 100vh;
+}
+
+/* Admin Login Page */
+.admin-login {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-box {
+    background: var(--admin-card);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header i {
+    font-size: 3rem;
+    color: var(--admin-primary);
+    margin-bottom: 15px;
+}
+
+.login-header h1 {
+    font-size: 1.5rem;
+    color: var(--admin-text);
+    font-weight: 600;
+}
+
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    color: var(--admin-text);
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.login-form .input-group-text {
+    background: var(--admin-bg);
+    border: 1px solid var(--admin-border);
+    color: var(--admin-text-light);
+}
+
+.login-form .form-control {
+    border: 1px solid var(--admin-border);
+    padding: 12px;
+    height: auto;
+}
+
+.login-form .form-control:focus {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    border-color: var(--admin-primary);
+}
+
+.login-form .btn-block {
+    width: 100%;
+    padding: 12px;
+    font-weight: 600;
+    background: var(--admin-primary);
+    border: none;
+    margin-top: 30px;
+}
+
+.login-form .btn-block:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* Admin Layout */
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+    background: var(--admin-bg);
+}
+
+.admin-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-nav {
+    background: var(--admin-card);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-toggle {
+    background: none;
+    border: none;
+    color: var(--admin-text);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.admin-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.admin-notifications {
+    position: relative;
+    color: var(--admin-text);
+    cursor: pointer;
+}
+
+.admin-notifications .badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--admin-danger);
+    color: white;
+    border-radius: 50%;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.admin-profile a {
+    color: var(--admin-text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.admin-content {
+    padding: 2rem;
+    flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-nav-right {
+        gap: 1rem;
+    }
+
+    .admin-profile span {
+        display: none;
+    }
+
+    .admin-content {
+        padding: 1rem;
+    }
+} 

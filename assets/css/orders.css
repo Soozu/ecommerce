@@ -1,0 +1,232 @@
+/* Variables */
+:root {
+    --primary-color: #63FFFB;
+    --secondary-color: #9C47FF;
+    --dark-bg: #0D1117;
+    --card-bg: rgba(30, 35, 45, 0.9);
+    --text-color: #ffffff;
+}
+
+body {
+    background: var(--dark-bg);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+/* Orders Container */
+.orders-container {
+    background: rgba(13, 17, 23, 0.95);
+    border-radius: 15px;
+    border: 1px solid rgba(99, 255, 251, 0.15);
+    box-shadow: 0 0 40px rgba(99, 255, 251, 0.15);
+    padding: 40px;
+    margin: 50px 0;
+    backdrop-filter: blur(10px);
+}
+
+.orders-container h1 {
+    color: var(--text-color);
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Orders Timeline */
+.orders-timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.orders-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, 
+        var(--primary-color),
+        var(--secondary-color)
+    );
+}
+
+/* Order Card */
+.order-card {
+    background: rgba(30, 35, 45, 0.5);
+    border: 1px solid rgba(99, 255, 251, 0.1);
+    border-radius: 15px;
+    margin-bottom: 30px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.order-card::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 30px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+.order-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(99, 255, 251, 0.1);
+}
+
+/* Order Header */
+.order-header {
+    background: rgba(13, 17, 23, 0.95);
+    padding: 20px;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-info h3 {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.order-meta {
+    display: flex;
+    gap: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.order-meta i {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+.order-total {
+    text-align: right;
+}
+
+.order-total .label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    display: block;
+}
+
+.order-total .amount {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* Order Items */
+.order-items {
+    padding: 20px;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid rgba(99, 255, 251, 0.1);
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.item-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(99, 255, 251, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.item-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-details h4 {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.item-details p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.item-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.item-meta .price {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Empty State */
+.empty-orders {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.empty-orders i {
+    font-size: 4rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.empty-orders h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.empty-orders p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .orders-container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .order-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .order-total {
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .order-meta {
+        justify-content: center;
+    }
+} 

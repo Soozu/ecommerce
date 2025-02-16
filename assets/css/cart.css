@@ -1,0 +1,202 @@
+/* Variables */
+:root {
+    --primary-color: #63FFFB;
+    --secondary-color: #9C47FF;
+    --dark-bg: #0D1117;
+    --card-bg: rgba(30, 35, 45, 0.9);
+    --text-color: #ffffff;
+}
+
+/* Cart Container */
+.cart-container {
+    background: rgba(13, 17, 23, 0.95);
+    border-radius: 25px;
+    border: 1px solid rgba(99, 255, 251, 0.15);
+    box-shadow: 
+        0 0 40px rgba(99, 255, 251, 0.15),
+        inset 0 0 20px rgba(99, 255, 251, 0.05);
+    padding: 40px;
+    margin: 50px 0;
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glassmorphism Border Effect */
+.cart-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        rgba(99, 255, 251, 0.3),
+        rgba(156, 71, 255, 0.3),
+        rgba(99, 255, 251, 0.3)
+    );
+    border-radius: 25px;
+    z-index: -1;
+    animation: borderRotate 10s linear infinite;
+}
+
+@keyframes borderRotate {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+/* Cart Header */
+.cart-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Cart Items */
+.cart-item {
+    background: rgba(30, 35, 45, 0.5);
+    border: 1px solid rgba(99, 255, 251, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.cart-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 255, 251, 0.1);
+}
+
+.cart-item .product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(99, 255, 251, 0.2);
+}
+
+.cart-item h5 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Category Badge */
+.category-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: rgba(99, 255, 251, 0.1);
+    color: var(--primary-color);
+    border: 1px solid rgba(99, 255, 251, 0.2);
+}
+
+/* Quantity Input */
+.quantity-input {
+    background: rgba(30, 35, 45, 0.5);
+    border: 2px solid rgba(99, 255, 251, 0.1);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 10px;
+    width: 80px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.quantity-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(99, 255, 251, 0.2);
+    outline: none;
+}
+
+/* Remove Button */
+.remove-btn {
+    color: #FF453A;
+    transition: all 0.3s ease;
+}
+
+.remove-btn:hover {
+    color: #FF453A;
+    text-shadow: 0 0 10px rgba(255, 69, 58, 0.5);
+}
+
+/* Cart Total */
+.cart-total {
+    background: rgba(30, 35, 45, 0.5);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 30px;
+    border: 1px solid rgba(99, 255, 251, 0.1);
+}
+
+.cart-total h4 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    padding: 12px 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 255, 251, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(99, 255, 251, 0.2);
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Empty Cart */
+.empty-cart {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.empty-cart i {
+    font-size: 5rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.empty-cart h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.empty-cart p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+}
+
+/* Order Summary */
+.order-summary {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+} 

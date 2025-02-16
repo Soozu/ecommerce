@@ -1,0 +1,322 @@
+/* Variables */
+:root {
+    --primary-color: #63FFFB;
+    --secondary-color: #9C47FF;
+    --dark-bg: #0D1117;
+    --card-bg: rgba(30, 35, 45, 0.9);
+    --text-color: #ffffff;
+}
+
+body {
+    background: var(--dark-bg);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(99, 255, 251, 0.1);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Subscription Container */
+.subscriptions-container {
+    background: rgba(13, 17, 23, 0.95);
+    border-radius: 15px;
+    border: 1px solid rgba(99, 255, 251, 0.15);
+    box-shadow: 0 0 40px rgba(99, 255, 251, 0.15);
+    padding: 40px;
+    margin: 50px 0;
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.subscriptions-container h1 {
+    color: var(--text-color);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subscriptions-container h2 {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin: 30px 0 20px;
+}
+
+/* Update the subscription grid layout */
+.subscription-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.subscription-card {
+    background: rgba(30, 35, 45, 0.5);
+    border: 1px solid rgba(99, 255, 251, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.subscription-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(99, 255, 251, 0.1);
+}
+
+.subscription-header {
+    background: rgba(13, 17, 23, 0.95);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subscription-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(99, 255, 251, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscription-icon i {
+    font-size: 2rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subscription-content {
+    padding: 20px;
+}
+
+.subscription-content h3 {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.subscription-info {
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.info-item i {
+    width: 20px;
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.badge {
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.badge.bg-success {
+    background: rgba(99, 255, 251, 0.2) !important;
+    color: var(--primary-color);
+}
+
+.badge.bg-secondary {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Expired Subscriptions */
+.expired-subscriptions {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(99, 255, 251, 0.1);
+}
+
+.subscription-card.expired {
+    opacity: 0.7;
+}
+
+/* Cancel Button */
+.btn-danger {
+    width: 100%;
+    background: rgba(255, 69, 58, 0.1);
+    border: 1px solid rgba(255, 69, 58, 0.2);
+    color: #FF453A;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn-danger:hover {
+    background: rgba(255, 69, 58, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Empty State */
+.empty-subscriptions {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.empty-subscriptions i {
+    font-size: 4rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.empty-subscriptions h3 {
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.empty-subscriptions p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 25px;
+}
+
+.empty-subscriptions .btn-primary {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.empty-subscriptions .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 255, 251, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .subscriptions-container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .subscription-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Add these styles for the confirmation modal */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(5px);
+    z-index: 1050;
+    display: none;
+}
+
+.confirmation-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(30, 35, 45, 0.95);
+    border: 1px solid rgba(99, 255, 251, 0.2);
+    border-radius: 15px;
+    padding: 25px;
+    width: 90%;
+    max-width: 400px;
+    z-index: 1051;
+    display: none;
+    box-shadow: 0 0 30px rgba(99, 255, 251, 0.15);
+}
+
+.confirmation-modal h4 {
+    color: var(--text-color);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.confirmation-modal p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.btn-modal {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-modal-confirm {
+    background: rgba(255, 69, 58, 0.1);
+    border: 1px solid rgba(255, 69, 58, 0.2);
+    color: #FF453A;
+}
+
+.btn-modal-confirm:hover {
+    background: rgba(255, 69, 58, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-modal-cancel {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-modal-cancel:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Animation classes */
+.fade-in {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+} 

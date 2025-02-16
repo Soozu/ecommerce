@@ -1,0 +1,129 @@
+/* Dashboard Stats */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--admin-card);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--admin-bg);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.stat-card:nth-child(1) .stat-icon {
+    color: var(--admin-primary);
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.stat-card:nth-child(2) .stat-icon {
+    color: var(--admin-success);
+    background: rgba(5, 150, 105, 0.1);
+}
+
+.stat-card:nth-child(3) .stat-icon {
+    color: var(--admin-warning);
+    background: rgba(217, 119, 6, 0.1);
+}
+
+.stat-card:nth-child(4) .stat-icon {
+    color: var(--admin-info);
+    background: rgba(8, 145, 178, 0.1);
+}
+
+.stat-details h3 {
+    font-size: 1.5rem;
+    color: var(--admin-text);
+    margin: 0 0 0.25rem 0;
+}
+
+.stat-details p {
+    color: var(--admin-text-light);
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+}
+
+/* Status Badges */
+.admin-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.admin-badge-pending {
+    background: rgba(217, 119, 6, 0.1);
+    color: var(--admin-warning);
+}
+
+.admin-badge-completed {
+    background: rgba(5, 150, 105, 0.1);
+    color: var(--admin-success);
+}
+
+.admin-badge-cancelled {
+    background: rgba(220, 38, 38, 0.1);
+    color: var(--admin-danger);
+}
+
+/* Chart Container */
+canvas {
+    width: 100% !important;
+    height: 300px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card {
+        padding: 1rem;
+    }
+    
+    .stat-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    .stat-details h3 {
+        font-size: 1.25rem;
+    }
+} 
